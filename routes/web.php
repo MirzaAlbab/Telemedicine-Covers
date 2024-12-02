@@ -28,9 +28,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',[PagesController::class,'home']);
-Route::get('/about',[PagesController::class,'about']);
-
-Route::get('/mahasiswa',[MahasiswaController::class,'index']);
 
 Route::get('/login', [AuthController::class,'login'])->name('login');
 Route::post('/login', [AuthController::class,'pastlogin']);
