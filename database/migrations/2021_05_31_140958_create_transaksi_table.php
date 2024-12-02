@@ -17,8 +17,6 @@ class CreateTransaksiTable extends Migration
             $table->id();
             $table->float('total_biaya');
             $table->date('tanggal_konsultasi');
-            // $table->unsignedBigInteger('id_pasien');
-            // $table->unsignedBigInteger('id_konsultasi');
             $table->foreignId('id_user')->constrained('users');
             $table->foreignId('id_konsultasi')->constrained('konsultasi');
             $table->timestamps();

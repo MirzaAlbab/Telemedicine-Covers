@@ -20,7 +20,6 @@ class CreateRekamMedisPasienTable extends Migration
             $table->integer('suhu_tubuh');
             $table->string('darah_lengkap');
             $table->string('reseptor_rate');
-            // $table->unsignedBigInteger('id_pasien');
             $table->foreignId('id_user')->constrained('users');
             $table->timestamps();
         });

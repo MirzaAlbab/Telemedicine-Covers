@@ -14,17 +14,11 @@ class CreateKonsultasiTable extends Migration
     public function up()
     {
         Schema::enableForeignKeyConstraints();
-        Schema::create('konsultasi', function (Blueprint $table) {
+        Schema::create('pemeriksaan', function (Blueprint $table) {
             $table->id();
-            $table->date('tanggal_konsultasi');
-            $table->string('catatan_konsultasi')->nullable();
-            // $table->unsignedBigInteger('id_pasien');
-            // $table->unsignedBigInteger('id_dokter');
-            $table->foreignId('id_dokter')->nullable()->constrained('dokter');
+            $table->date('tanggal_pemeriksaan');
+            $table->string('catatan_pemeriksaan')->nullable();
             $table->foreignId('id_user')->nullable()->constrained('users');
-            // $table->foreign('id_pasien')->references('id_pasien')->on('users');
-            // $table->foreign('id_dokter')->references('id_dokter')->on('dokter');
-            
             $table->timestamps();
         });
     }
@@ -36,6 +30,6 @@ class CreateKonsultasiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('konsultasi');
+        Schema::dropIfExists('pemeriksaan');
     }
 }

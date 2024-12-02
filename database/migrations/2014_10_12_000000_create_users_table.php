@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('telp');
             $table->string('alamat');
             $table->date('tanggal_lahir');
+            $table->string('role')->default('pasien'); // Add default role as 'pasien'
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

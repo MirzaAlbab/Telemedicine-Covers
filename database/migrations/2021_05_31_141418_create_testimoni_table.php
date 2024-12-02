@@ -17,10 +17,7 @@ class CreateTestimoniTable extends Migration
             $table->date('tanggal');
             $table->decimal('rate_dokter');
             $table->string('komentar');
-            // $table->unsignedBigInteger('id_pasien');
-            // $table->unsignedBigInteger('id_dokter');
             $table->foreignId('id_users')->constrained('users');
-            $table->foreignId('id_dokter')->constrained('dokter');
             $table->timestamps();
         });
     }
