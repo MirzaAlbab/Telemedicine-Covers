@@ -14,6 +14,7 @@
   <div class="container">
     <!-- Brand on the left -->
     <a class="navbar-brand" href="/">Covers</a>
+    <a href="/dashboard">dashboard</a>
     
     <!-- Toggle Button for Mobile View -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

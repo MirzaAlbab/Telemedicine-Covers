@@ -23,7 +23,7 @@
   <body>
     <nav class="navbar fixed-top navbar-expand-lg bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">Selamat datang {{Auth::user()->nama}}</a>
+        <a class="navbar-brand" href="/">Selamat datang</a>
         
         
           
