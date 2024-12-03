@@ -17,6 +17,10 @@ return new class extends Migration
             $table->date('date_of_birth');
             $table->date('gender');
             $table->date('phone');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }
