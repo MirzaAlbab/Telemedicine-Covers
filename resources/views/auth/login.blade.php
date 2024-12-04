@@ -1,4 +1,4 @@
-@extends('layout.home')
+@extends('layout.main')
 <link rel="stylesheet" href="{{asset('css/stylelogin.css') }}">
 <style>
         body {

@@ -23,7 +23,22 @@ class DoctorResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')
+                ->required()
+                ->maxLength(255),
+                Forms\Components\TextInput::make('email')
+                ->required()
+                ->email(),
+                Forms\Components\TextInput::make('phone')
+                ->required()
+                ->maxLength(20),
+                Forms\Components\TextInput::make('specialty')
+                ->required()
+                ->maxLength(255),
+                Forms\Components\TextInput::make('password')
+                ->password()
+                ->required()
+                ->minLength(8),
             ]);
     }
 
@@ -31,7 +46,11 @@ class DoctorResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('name')
+                ->searchable(),
+                Tables\Columns\TextColumn::make('email'),
+                Tables\Columns\TextColumn::make('phone'),
+                Tables\Columns\TextColumn::make('specialty'),
             ])
             ->filters([
                 //

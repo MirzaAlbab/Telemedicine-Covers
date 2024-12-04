@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\PatientResource\Pages;
 use App\Filament\Resources\PatientResource\RelationManagers;
 use App\Models\Patient;
+use FFI;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -23,7 +24,30 @@ class PatientResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')
+                ->required()
+                ->maxLength(255),
+                Forms\Components\DatePicker::make('date_of_birth')
+                ->required()
+                ->maxDate(now()),
+                Forms\Components\Select::make('gender')
+                ->options([
+                    'm' => 'male',
+                    'f' => 'female',
+                ])
+                ->required(),
+                Forms\Components\TextInput::make('email')
+                ->required()
+                ->email(),
+                Forms\Components\TextInput::make('phone')
+                ->required()
+                ->maxLength(20),
+                Forms\Components\TextInput::make('password')
+                ->password()
+                ->required()
+                ->minLength(8),
+               
+                
             ]);
     }
 
@@ -31,7 +55,13 @@ class PatientResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('name')
+                ->searchable(),
+                Tables\Columns\TextColumn::make('email'),
+                Tables\Columns\TextColumn::make('phone'),
+                Tables\Columns\TextColumn::make('gender'),
+                Tables\Columns\TextColumn::make('date_of_birth')
+                
             ])
             ->filters([
                 //
